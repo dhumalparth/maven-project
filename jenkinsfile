@@ -1,12 +1,12 @@
  pipeline {
-     agent any
+    agent any
      stages {
-         stage ('clone my code') {
+         stage('clone my code') {
                git 'https://github.com/dhumalparth/maven-project'
            }
            }
            {
-         stage ('compile my code') {
+         stage('compile my code') {
            setps {
                withMaven(maven : 'LocalMaven') {
                    sh 'mvn compile'
