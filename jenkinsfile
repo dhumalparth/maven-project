@@ -50,4 +50,13 @@ pipeline {
                    }
                    }
                    }
+                   {
+         stage('Install my code'){
+           steps {
+               withMaven(maven : 'LocalMaven') {
+                   sh 'mvn install'
+                   }
+                   }
+                   }
+                   }
                    }
