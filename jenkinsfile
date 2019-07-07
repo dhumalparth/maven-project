@@ -32,4 +32,13 @@ pipeline {
                    }
                    }
                    }
+                   {
+         stage('Pakaging my code'){
+           steps {
+               withMaven(maven : 'LocalMaven') {
+                   sh 'mvn package'
+                   }
+                   }
+                   }
+                   }
                    }
