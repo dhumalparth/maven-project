@@ -42,10 +42,10 @@ pipeline {
                    }
                    }
                    {
-         stage('Very my code'){
+         stage('Verify my code'){
            steps {
                withMaven(maven : 'LocalMaven') {
-                   sh 'mvn very'
+                   sh 'mvn verify'
                    }
                    }
                    }
