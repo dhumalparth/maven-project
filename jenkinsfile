@@ -23,4 +23,13 @@ pipeline {
                    }
                    }
                    }
+                    {
+         stage('Test my code'){
+           steps {
+               withMaven(maven : 'LocalMaven') {
+                   sh 'mvn test'
+                   }
+                   }
+                   }
+                   }
                    }
