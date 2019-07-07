@@ -14,4 +14,13 @@ pipeline {
                    }
                    }
                    }
+                   {
+         stage('validate my code'){
+           steps {
+               withMaven(maven : 'LocalMaven') {
+                   sh 'mvn validate'
+                   }
+                   }
+                   }
+                   }
                    }
