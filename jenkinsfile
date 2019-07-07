@@ -41,4 +41,13 @@ pipeline {
                    }
                    }
                    }
+                   {
+         stage('Very my code'){
+           steps {
+               withMaven(maven : 'LocalMaven') {
+                   sh 'mvn very'
+                   }
+                   }
+                   }
+                   }
                    }
