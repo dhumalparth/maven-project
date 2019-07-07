@@ -7,7 +7,7 @@ pipeline {
          }
          {
          stage('compile my code')
-         {agent label 'maven'}
+         {agent label 'mave'}
          {
            steps {
                withMaven(maven : 'LocalMaven') {
