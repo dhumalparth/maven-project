@@ -5,52 +5,6 @@ pipeline {
                git 'https://github.com/dhumalparth/maven-project'
            }
          }
-         {
-         stage('compile my code')
-         {
-           steps {
-               withMaven(maven : 'LocalMaven') {
-                   sh 'mvn compile'
-                   }
-                   }
-                   }
-                   }
-                   {
-         stage('validate my code'){
-           steps {
-               withMaven(maven : 'LocalMaven') {
-                   sh 'mvn validate'
-                   }
-                   }
-                   }
-                   }
-                    {
-         stage('Test my code'){
-           steps {
-               withMaven(maven : 'LocalMaven') {
-                   sh 'mvn test'
-                   }
-                   }
-                   }
-                   }
-                   {
-         stage('Pakaging my code'){
-           steps {
-               withMaven(maven : 'LocalMaven') {
-                   sh 'mvn package'
-                   }
-                   }
-                   }
-                   }
-                   {
-         stage('Verify my code'){
-           steps {
-               withMaven(maven : 'LocalMaven') {
-                   sh 'mvn verify'
-                   }
-                   }
-                   }
-                   }
                    {
          stage('Install my code'){
            steps {
