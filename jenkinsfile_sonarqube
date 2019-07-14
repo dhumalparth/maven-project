@@ -1,11 +1,13 @@
 pipeline {
     agent any
+
+
     stages {
         stage('SCM Checkout'){
-        setps{
           git 'https://github.com/dhumalparth/maven-project'
         }
-        }
+  }
+    {
   stage ('build && SonarQube analysis') {
 steps {
 withSonarQubeEnv('sonar') {
