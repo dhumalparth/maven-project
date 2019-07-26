@@ -8,10 +8,5 @@ sh label: '', script: 'mvn clean package'
 stage ('docker build image'){
 sh label: '', script: 'docker build -t dhumalparth/yogesh-app:1.0.0 .'
 }
-stage ('Push Docker image to DockerHub'){
-withCredentials([string(credentialsId: 'dockerhubaccount', variable: 'dockerhubaccount')]) {
-sh "docker login -u dhumalparth -p ${dockerhubaccount}"
-}
-sh 'docker push dhumalparth/yogesh-app:1.0.0'
-}
+
 }
