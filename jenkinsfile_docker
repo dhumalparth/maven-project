@@ -14,4 +14,10 @@ sh "docker login -u dhumalparth -p ${dockerhubaccount}"
 }
 sh 'docker push dhumalparth/yogesh-app:1.0.0'
 }
+stage ('deploy to dev docker){
+def dockerrun='docker run -d -p 9000:8080 --name mytomcat-app dhumalparth/yogesh-app:1.0.0'
+sshagent(['deploy-to-dev-docker']) {
+    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.36.51 ${dockerrun}"
+}
+}
 }
