@@ -5,4 +5,7 @@ git 'https://github.com/dhumalparth/maven-project.git'
 stage ('package build'){
 sh label: '', script: 'mvn clean package'
 }
+stage ('docker build image'){
+sh label: '', script: 'docker build -t dhumalparth/yogesh-app:1.0.0 .'
+}
 }
